@@ -13,8 +13,24 @@
   --accent: #D9A05B;
 }
 
+/* Slim themed scrollbar — thin, quiet, bronze on hover */
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--ink) 25%, transparent) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--ink) 22%, transparent);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }
 html.lenis,
 html.lenis body {

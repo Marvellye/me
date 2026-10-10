@@ -1,0 +1,8 @@
+setTimeout(()=>{
+  const de=document.documentElement;
+  const res = 'PROBE::scrollW='+de.scrollWidth+' innerW='+window.innerWidth+' overflow='+(de.scrollWidth>window.innerWidth)
+    +' h1='+(document.querySelector('h1')?document.querySelector('h1').innerText.slice(0,60):'none')
+    +' canvas='+document.querySelectorAll('canvas').length;
+  const d=document.createElement('div'); d.id='probe-out'; d.textContent=res; document.body.prepend(d);
+  document.title=res;
+},7000);

@@ -1,0 +1,18 @@
+<!doctype html><html><body style="margin:0">
+<iframe id="a" src="http://127.0.0.1:3100/" style="width:390px;height:1200px;border:0"></iframe>
+<iframe id="b" src="http://127.0.0.1:3100/" style="width:1440px;height:1200px;border:0"></iframe>
+<script>
+window.__done=false;
+setTimeout(()=>{
+  const out=[];
+  for (const id of ['a','b']) {
+    try {
+      const f=document.getElementById(id);
+      const d=f.contentDocument;
+      out.push(id+': body.scrollW='+d.body.scrollWidth+' innerW='+f.contentWindow.innerWidth+' overflow='+(d.documentElement.scrollWidth>f.clientWidth));
+    } catch(e){ out.push(id+': ERR '+e); }
+  }
+  document.title='MEASURE::'+out.join(' || ');
+  window.__done=true;
+},6000);
+</script></body></html>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Nav from "@/components/Nav";
@@ -38,6 +39,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-cream text-ink dark:bg-ink dark:text-cream antialiased">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LWMFHFNMYM"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LWMFHFNMYM');`}
+        </Script>
         <ModeProvider>
           <SmoothScroll />
           <Nav />

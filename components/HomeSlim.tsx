@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PROFILE, WORK, CAPABILITIES, CERTS } from "@/content";
 import SocialIcons from "./SocialIcons";
 
@@ -24,7 +25,18 @@ export default function HomeSlim() {
         <div className="mt-4 space-y-5">
           {WORK.map((w) => (
             <div key={w.name}>
-              <p className="font-bold">
+              <p className="flex items-center gap-2 font-bold">
+                {w.logo && (
+                  <Image
+                    src={w.logo}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 shrink-0 bg-transparent object-contain [&>span]:!bg-transparent"
+                    style={{ background: "transparent" }}
+                    loading={w.name === "Bitilda" ? "eager" : "lazy"}
+                  />
+                )}
                 {w.live ? (
                   <a
                     className="transition-colors hover:text-bronze dark:hover:text-sand"

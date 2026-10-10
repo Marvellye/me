@@ -24,6 +24,7 @@ export type WorkItem = {
   blurb: string;
   points: string[];
   live?: string;
+  logo?: string;
 };
 
 /**
@@ -33,6 +34,7 @@ export type WorkItem = {
 export const WORK: WorkItem[] = [
   {
     name: "Bitilda",
+    logo: "/logos/bitilda.svg",
     role: "Co-founder & CTO",
     kind: "Co-founded product",
     period: "2026 — Present",
@@ -45,17 +47,8 @@ export const WORK: WorkItem[] = [
     live: "https://www.bitilda.com",
   },
   {
-    name: "ArgoZap",
-    role: "Builder (internship)",
-    kind: "Renaissance Africa Energy Company",
-    period: "Jun — Dec 2026",
-    blurb:
-      "Simple, fast & secure file & folder sharing for Windows — share anywhere, instantly, without uploading to a server. Content goes directly from your PC; nothing stored anywhere.",
-    points: ["Direct PC-to-PC transfer over generated secure links."],
-    live: "https://www.argozap.name.ng",
-  },
-  {
     name: "TrackDeck",
+    logo: "/logos/trackdeck.webp",
     role: "Co-founder (backend)",
     kind: "Co-founded product",
     period: "2024 — Present",
@@ -66,6 +59,7 @@ export const WORK: WorkItem[] = [
   },
   {
     name: "AlgoMap",
+    logo: "/logos/algomap.svg",
     role: "Builder",
     kind: "Independent product",
     period: "2025 — Present",
@@ -76,6 +70,7 @@ export const WORK: WorkItem[] = [
   },
   {
     name: "Alpha-Pins",
+    logo: "/logos/alpha-pins.webp",
     role: "Full-stack Developer (freelance)",
     kind: "Client engineering",
     period: "2024 — Present",
@@ -86,6 +81,7 @@ export const WORK: WorkItem[] = [
   },
   {
     name: "Success Heritage Modern Academy",
+    logo: "/logos/shma.webp",
     role: "Full-stack Developer",
     kind: "Client engineering",
     period: "2025 — Present",
@@ -93,6 +89,16 @@ export const WORK: WorkItem[] = [
       "School-facing software supporting administrative and student workflows — portals, roles, and reporting.",
     points: ["Student/admin portals with permissions and reporting."],
     live: "https://www.shma.sch.ng",
+  },
+  {
+    name: "ArgoZap",
+    role: "Builder (internship)",
+    kind: "Renaissance Africa Energy Company",
+    period: "Jun — Dec 2026",
+    blurb:
+      "Simple, fast & secure file & folder sharing for Windows — share anywhere, instantly, without uploading to a server. Content goes directly from your PC; nothing stored anywhere.",
+    points: ["Direct PC-to-PC transfer over generated secure links."],
+    live: "https://www.argozap.name.ng",
   },
   {
     name: "MivaX Cred",

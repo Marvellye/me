@@ -4,7 +4,6 @@ import {
   faGithub,
   faLinkedin,
   faXTwitter,
-  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { PROFILE } from "@/content";
@@ -16,7 +15,6 @@ export const SOCIALS = [
   { label: "GitHub", href: PROFILE.github, icon: faGithub },
   { label: "LinkedIn", href: PROFILE.linkedin, icon: faLinkedin },
   { label: "X", href: PROFILE.twitter, icon: faXTwitter },
-  { label: "WhatsApp", href: PROFILE.whatsapp, icon: faWhatsapp },
   { label: "Email", href: `mailto:${PROFILE.email}`, icon: faEnvelope },
 ];
 

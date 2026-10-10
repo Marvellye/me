@@ -1,4 +1,4 @@
-import { PROFILE, PROJECTS, EXPERIENCE, CAPABILITIES, CERTS } from "@/content";
+import { PROFILE, WORK, CAPABILITIES, CERTS } from "@/content";
 import SocialIcons from "./SocialIcons";
 
 /**
@@ -11,12 +11,8 @@ export default function HomeSlim() {
       <header>
         <h1 className="font-sans text-3xl font-bold tracking-tight">{PROFILE.name}</h1>
         <p className="mt-1 text-bronze dark:text-sand">{PROFILE.title}</p>
-        <p className="mt-3 opacity-70">
-          {PROFILE.location} ·{" "}
-          <a className="underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a> ·{" "}
-          <a className="underline" href={PROFILE.github} target="_blank" rel="noreferrer">github</a> ·{" "}
-          <a className="underline" href={PROFILE.linkedin} target="_blank" rel="noreferrer">linkedin</a> ·{" "}
-          <a className="underline" href={PROFILE.twitter} target="_blank" rel="noreferrer">x</a>
+        <p className="mt-3 flex items-center gap-4 text-base opacity-70">
+          <SocialIcons />
         </p>
         <p className="mt-4 opacity-80">{PROFILE.intro}</p>
       </header>
@@ -24,39 +20,31 @@ export default function HomeSlim() {
       <hr className="my-8 border-ink/15 dark:border-cream/15" />
 
       <section>
-        <h2 className="text-xs font-bold uppercase tracking-[0.25em] opacity-50">Experience</h2>
-        <div className="mt-4 space-y-5">
-          {EXPERIENCE.map((e) => (
-            <div key={e.org}>
-              <p className="font-bold">
-                {e.role} — {e.org}
-              </p>
-              <p className="opacity-50">{e.period}</p>
-              {e.points.map((p) => (
-                <p key={p} className="opacity-80">· {p}</p>
-              ))}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <hr className="my-8 border-ink/15 dark:border-cream/15" />
-
-      <section>
         <h2 className="text-xs font-bold uppercase tracking-[0.25em] opacity-50">Selected work</h2>
         <div className="mt-4 space-y-5">
-          {PROJECTS.map((p) => (
-            <div key={p.slug}>
+          {WORK.map((w) => (
+            <div key={w.name}>
               <p className="font-bold">
-                <a className="underline" href={`/work/${p.slug}`}>{p.name}</a>{" "}
-                <span className="font-normal opacity-50">[{p.type} · {p.status}]</span>
+                {w.live ? (
+                  <a
+                    className="transition-colors hover:text-bronze dark:hover:text-sand"
+                    href={w.live}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {w.name}
+                  </a>
+                ) : (
+                  w.name
+                )}{" "}
+                <span className="font-normal opacity-50">[{w.kind} · {w.period}]</span>
               </p>
-              <p className="opacity-80">{p.description}</p>
-              <p className="opacity-50">
-                {p.highlight}
-                {p.live && <> · <a className="underline" href={p.live} target="_blank" rel="noreferrer">live</a></>}
-                {p.repo && <> · <a className="underline" href={p.repo} target="_blank" rel="noreferrer">code</a></>}
+              <p className="opacity-80">
+                {w.role} — {w.blurb}
               </p>
+              {w.points.map((pt) => (
+                <p key={pt} className="opacity-50">· {pt}</p>
+              ))}
             </div>
           ))}
         </div>

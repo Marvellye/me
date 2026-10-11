@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { PROFILE, WORK, CAPABILITIES, CERTS } from "@/content";
 import SocialIcons from "./SocialIcons";
+import John316Widget from "./John316Widget";
 
 /**
  * SLIM — the minimalist CV. One column, monospace, no images,
@@ -95,6 +96,9 @@ export default function HomeSlim() {
         </div>
       </section>
 
+      <hr className="my-8 border-ink/15 dark:border-cream/15" />
+
+      <John316Widget />
     </div>
   );
 }

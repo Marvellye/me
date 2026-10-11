@@ -49,7 +49,7 @@ export default function HomeSlim() {
                 ) : (
                   w.name
                 )}{" "}
-                <span className="font-normal opacity-50">[{w.kind} · {w.period}]</span>
+                {/* <span className="font-normal opacity-50">[{w.kind} · {w.period}]</span> */}
               </p>
               <p className="opacity-80">
                 {w.role} — {w.blurb}
